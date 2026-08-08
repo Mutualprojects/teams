@@ -15,6 +15,11 @@ export default function manifest(): MetadataRoute.Manifest {
         sizes: 'any',
         type: 'image/x-icon',
       },
+      {
+        src: '/magnific_a-logo-with-the-text-team_jUgr4WPLD0.webp',
+        sizes: 'any',
+        type: 'image/webp',
+      },
     ],
   };
 }

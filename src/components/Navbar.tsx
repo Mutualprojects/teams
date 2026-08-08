@@ -43,7 +43,11 @@ export default function Navbar() {
         WebkitBackdropFilter: "blur(16px)",
       }}
     >
-      <div className="container flex h-[72px] items-center justify-between gap-4 lg:h-[80px]">
+      <div
+        className={`container flex items-center justify-between gap-4 transition-all duration-300 ease-out ${
+          scrolled ? "h-14 lg:h-16" : "h-[72px] lg:h-[80px]"
+        }`}
+      >
         {/* Brand Logo */}
         <Link
           href="/"
@@ -52,22 +56,33 @@ export default function Navbar() {
           aria-label="Team 7 Sports Management — Home"
         >
           <Image
-            src="/team7-logo.webp"
+            src="/magnific_a-logo-with-the-text-team_jUgr4WPLD0.webp"
             alt="Team 7 Sports Management"
-            width={150}
-            height={50}
+            width={256}
+            height={256}
             priority
-            className="h-auto w-[clamp(120px,28vw,150px)] object-contain"
+            className={`h-auto object-contain transition-all duration-300 ease-out ${
+              scrolled
+                ? "w-[clamp(70px,17vw,92px)]"
+                : "w-[clamp(120px,28vw,150px)]"
+            }`}
           />
         </Link>
 
         {/* Desktop Nav */}
-        <nav className="hidden items-center gap-6 xl:gap-8 lg:flex" aria-label="Primary navigation">
+        <nav
+          className={`hidden items-center transition-all duration-300 ease-out lg:flex ${
+            scrolled ? "gap-4 xl:gap-5" : "gap-6 xl:gap-8"
+          }`}
+          aria-label="Primary navigation"
+        >
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
-              className="font-heading text-[0.92rem] font-semibold text-[var(--text-muted)] transition-colors duration-200 hover:text-[var(--crimson)]"
+              className={`font-heading font-semibold text-[var(--text-muted)] transition-all duration-300 ease-out hover:text-[var(--crimson)] ${
+                scrolled ? "text-[0.6rem] tracking-wide" : "text-[0.92rem]"
+              }`}
             >
               {link.name}
             </Link>
@@ -76,7 +91,12 @@ export default function Navbar() {
 
         {/* CTA + Mobile Toggle */}
         <div className="flex shrink-0 items-center gap-2.5 sm:gap-3">
-          <Link href="/contact-us" className="btn btn-primary hidden !px-5 !py-2.5 !text-sm md:inline-flex">
+          <Link
+            href="/contact-us"
+            className={`btn btn-primary hidden md:inline-flex transition-all duration-300 ease-out ${
+              scrolled ? "!px-4 !py-2 !text-xs" : "!px-5 !py-2.5 !text-sm"
+            }`}
+          >
             Partner With Us
           </Link>
 
