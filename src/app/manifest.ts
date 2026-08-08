@@ -16,7 +16,7 @@ export default function manifest(): MetadataRoute.Manifest {
         type: 'image/png',
       },
       {
-        src: '/magnific_a-logo-with-the-text-team_jUgr4WPLD0.webp',
+        src: '/team7-logo.webp',
         sizes: 'any',
         type: 'image/webp',
       },
